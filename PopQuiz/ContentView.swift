@@ -11,17 +11,30 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
-            /*@START_MENU_TOKEN@*/Text("Content")/*@END_MENU_TOKEN@*/
+            VStack {
+                Text("Welcome, Pop Quiz time!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.bottom)
+                
+                NavigationLink(destination:  FavSeason()) { Text("Start")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                    .foregroundColor(Color.orange) }
+                
+                Image("quiz")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    
+                    .navigationBarHidden(true)
+                
+            }//closing vstack
+                
+        }//closng Navstack
             
-            NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Label Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/
-            }
-        }
+        }//closing some view
         
-        
-        
-    }//closing some view
-}//closing content view
+    }//closing content view
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
